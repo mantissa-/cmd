@@ -31,3 +31,18 @@
 #### Convert video to JPG image sequence
 
 `ffmpeg -i video.mov -q:v 2 %04d.jpg`
+
+***
+
+### Raw Conversion
+
+#### dcraw "one size fits all" raw to linear 16-bit tif
+
+`parallel dcraw -v -w -o 7 -4 -T -q 0 -p embed '{}' ::: *`
+
+- -v = verbose
+- -w = respect cam color temp
+- -o = ouptut colorspace
+- -4 = linearize
+- -q = debayer quality, fastest
+- -p = embed cam profile
