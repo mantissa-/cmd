@@ -8,6 +8,10 @@
 
 `parallel convert -quality 100 -scale 2000000@ '{}' '{.}.jpg' ::: *.exr`
 
+#### Force RGB Colorspace
+
+`parallel convert -set colorspace sRGB -colorspace RGB -quality 100 -scale 2000000@ '{}' '{.}.jpg' ::: *.exr`
+
 ##### Bonus round:
 - Add `-profile profile_name.icc` to specify an ICC profile
 - The scale parameter with @ at the end specifies the image size in megapixels. For example, a 2:1 image wil automatically be scaled to 2000x1000px
