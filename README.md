@@ -46,3 +46,5 @@
 - -4 = linearize
 - -q = debayer quality, fastest
 - -p = embed cam profile
+
+Nikon Raw to 16-bit AcesCG: `parallel dcraw_emu -v -w -W -H 2 -o 6 -6 -T -q 0 '{}' ::: *.NEF`
